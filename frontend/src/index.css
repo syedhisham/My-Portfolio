@@ -12,6 +12,101 @@
 .montserrat {
   font-family: "Montserrat", system-ui;
   font-optical-sizing: auto;
-  /* font-weight: <weight>; */
   font-style: normal;
+}
+
+.edu-au-vic-wa-nt-dots {
+  font-family: "Edu AU VIC WA NT Dots", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Texture container holding multiple glowing layers */
+.texture-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: lighten; /* For visual blending of glowing textures */
+}
+
+/* Base styles for texture layers */
+.texture-layer {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  filter: blur(50px);
+}
+
+.layer-1 {
+  width: 300px;
+  height: 300px;
+  background-image: radial-gradient(
+    circle at center,
+    #3a3a3a,
+    #2e2e2e,
+    #000000
+  );
+  box-shadow: 0 0 40px 10px rgba(46, 46, 46, 0.5);
+}
+
+.layer-2 {
+  width: 350px;
+  height: 350px;
+  background-image: radial-gradient(
+    circle at center,
+    #4a4a4a,
+    #3b3b3b,
+    #2e2e2e
+  );
+  box-shadow: 0 0 50px 15px rgba(46, 46, 46, 0.4);
+}
+
+/* Glowing texture - Layer 3 */
+.layer-3 {
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(
+    circle at center,
+    #5a5a5a,
+    #4b4b4b,
+    #3a3a3a
+  );
+  box-shadow: 0 0 60px 20px rgba(46, 46, 46, 0.3);
+}
+
+@keyframes letterFill {
+  0% {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+  }
+  100% {
+    color: white;
+    -webkit-text-stroke: 0;
+  }
+}
+
+.animate-letterFill {
+  animation: letterFill 0.5s forwards;
+  display: inline-block;
+}
+
+@keyframes letterFill {
+  0% {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+  }
+  100% {
+    color: white;
+    -webkit-text-stroke: 0;
+  }
+}
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
